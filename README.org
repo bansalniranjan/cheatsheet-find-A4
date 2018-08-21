@@ -24,10 +24,10 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** find basic usage
 | Name                                | Summary                                                                 |
 |-------------------------------------+-------------------------------------------------------------------------|
-| Basic find                          | =find /home/mac/<myfolder> -name "my*.log"=                             |
+| Basic find                          | find /home/mac/<myfolder> -name "my*.log"                               |
 | Find folder old than 3 days         | =find . -maxdepth 1 -type d -ctime +3=                                  |
 | Delete files Older Than x Days      | =find . -mtime +5 -exec rm {} \;=                                       |
-| Find files with two patterns        | =find . -iname "my*.log" -o -iname "my*.txt"=                           |
+| Find files with two patterns        | find . -iname "my*.log" -o -iname "my*.txt"                             |
 | Find files while excluding patterns | =find . -name "*.log" -prune -o -name ".git" -prune -o -type f -print0= |
 | Find with ls details                | =find . \( -iname README.md \) -ls=                                     |
 
