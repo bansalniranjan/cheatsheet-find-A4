@@ -25,12 +25,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Name                                 | Summary                                                                 |
 |--------------------------------------+-------------------------------------------------------------------------|
 | Basic find                           | find /home/mac/<myfolder> -name "my*.log"                               |
+| Find files with two patterns         | find . -iname "my*.log" -o -iname "my*.txt"                             |
 | Find folder old than 3 days          | =find . -maxdepth 1 -type d -ctime +3=                                  |
 | Find files changed within 60 minutes | =find /var/log -mmin 60 -type f=                                        |
-| Find files with two patterns         | find . -iname "my*.log" -o -iname "my*.txt"                             |
 | Find files while excluding patterns  | =find . -name "*.log" -prune -o -name ".git" -prune -o -type f -print0= |
 | Find with ls details                 | =find . \( -iname README.md \) -ls=                                     |
 | Find files filtered by size          | =find /var/log -type f -size +50k -size -100k=                          |
+| Find files older than another file   | =find . -newer /tmp/file=                                               |
 
 - Find with grep
 #+BEGIN_SRC sh
@@ -52,12 +53,6 @@ find /var/lib/jenkins/jobs -name config.xml -printf '%T@ %p\n' \
 | Delete files haven't been updated in 5 days | =find . -mtime +5 -exec rm {} \;=                          |
 | Delete folders created older than 5 days    | =find . -name "npm-*" -type d -ctime +2 -exec rm -rf {} += |
 
-- Delete with comparision
-#+BEGIN_SRC sh
-# Delete files haven't updated for 1 year
-
-touch /tmp/file ; $EXECUTECOMMAND ; find /path -newer /tmp/file
-#+END_SRC
 ** Misc
 | Name               | Summary                             |
 |--------------------+-------------------------------------|
