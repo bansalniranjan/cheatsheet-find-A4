@@ -22,11 +22,21 @@ File me [[https://github.com/dennyzhang/cheatsheet-find-A4/issues][Issues]] or s
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** find basic usage
-| Name                           | Summary                                         |
-|--------------------------------+-------------------------------------------------|
-| Find folder old than 3 days    | =find . -maxdepth 1 -type d -ctime +3=          |
-| Delete Files Older Than x Days | =find /path/to/files* -mtime +5 -exec rm {} \;= |
-| Find files with two patterns   | find . -iname "*.log" -o -iname "*.txt"         |
+| Name                                | Summary                                                                 |
+|-------------------------------------+-------------------------------------------------------------------------|
+| Basic find                          | =find /home/mac/<myfolder> -name "my*.log"=                             |
+| Find folder old than 3 days         | =find . -maxdepth 1 -type d -ctime +3=                                  |
+| Delete files Older Than x Days      | =find . -mtime +5 -exec rm {} \;=                                       |
+| Find files with two patterns        | =find . -iname "my*.log" -o -iname "my*.txt"=                           |
+| Find files while excluding patterns | =find . -name "*.log" -prune -o -name ".git" -prune -o -type f -print0= |
+| Find with ls details                | =find . \( -iname README.md \) -ls=                                     |
+
+- Find with grep
+#+BEGIN_SRC sh
+find /home/mac/devstack -name "*.log" -prune -o \
+     -name "data" -prune -o -type f \
+     -print0 | xargs -0 -e grep '172\.16\.33' /opt/stack
+#+END_SRC
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -39,7 +49,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
 #+END_HTML
 * org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
+#+STARTUP: overview customtime noalign logdone hidestars
 #+TITLE:  find CheatSheet
 #+DESCRIPTION: 
 #+KEYWORDS: 
@@ -53,4 +63,4 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
-
+* TODO when find has failed, set exit code to not zero             :noexport:
