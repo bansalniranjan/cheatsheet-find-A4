@@ -1,4 +1,4 @@
-* Find CheatSheet                                                     :Tools:
+* CheatSheet: Linux Find                                              :Tools:
 :PROPERTIES:
 :type:     shell
 :END:
@@ -22,9 +22,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-find-A4/issues][Issues]] or s
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** find basic usage
-| Name                        | Summary                                |
-|-----------------------------+----------------------------------------|
-| Find folder old than 3 days | =find . -maxdepth 1 -type d -ctime +3= |
+| Name                           | Summary                                         |
+|--------------------------------+-------------------------------------------------|
+| Find folder old than 3 days    | =find . -maxdepth 1 -type d -ctime +3=          |
+| Delete Files Older Than x Days | =find /path/to/files* -mtime +5 -exec rm {} \;= |
+| Find files with two patterns   | =find . -iname "*.log" -o -iname "*.txt"=       |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
