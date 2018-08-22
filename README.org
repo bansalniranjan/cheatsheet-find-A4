@@ -1,4 +1,4 @@
-* CheatSheet: Linux Find                                              :Tools:
+* CheatSheet: Linux Find                                              :Linux:
 :PROPERTIES:
 :type:     shell
 :END:
