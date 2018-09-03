@@ -27,10 +27,10 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Find files with two patterns         | find . -iname "my*.log" -o -iname "my*.txt"                             |
 | Find folder old than 3 days          | =find . -maxdepth 1 -type d -ctime +3=                                  |
 | Find files changed within 60 minutes | =find /var/log -mmin 60 -type f=                                        |
-| Find files while excluding patterns  | =find . -name "*.log" -prune -o -name ".git" -prune -o -type f -print0= |
 | Find with ls details                 | =find . \( -iname README.md \) -ls=                                     |
 | Find files filtered by size          | =find /var/log -type f -size +50k -size -100k=                          |
 | Find files older than another file   | =find . -newer /tmp/file=                                               |
+| Find files while excluding patterns  | =find . -name "*.log" -prune -o -name ".git" -prune -o -type f -print0= |
 
 - Find with grep
 #+BEGIN_SRC sh
